@@ -6,11 +6,6 @@ import pandas as pd
 import bm25s
 from bm25s import BM25
 
-import subprocess
-
-# Install the model if it's not already installed
-subprocess.call([sys.executable, "-m", "pip", "install", "en-core-web-lg==3.6.0"])
-
 import spacy
 from spacy.cli import download
 
