@@ -6,6 +6,7 @@ import pandas as pd
 import bm25s
 from bm25s import BM25
 
+import sys
 import subprocess
 
 # Install the model if it's not already installed
