@@ -7,8 +7,15 @@ import bm25s
 from bm25s import BM25
 import spacy
 
-# Load NLP library
-nlp = spacy.load("en_core_web_lg")
+
+from spacy.cli import download
+
+# Download model if it's not available
+try:
+    nlp = spacy.load("en_core_web_lg")
+except OSError:
+    download("en_core_web_lg")
+    nlp = spacy.load("en_core_web_lg")
 
 # Load models
 tfidf = joblib.load("models/tfidf_vectorizer.joblib")
