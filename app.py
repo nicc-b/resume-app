@@ -7,15 +7,20 @@ import bm25s
 from bm25s import BM25
 import spacy
 
-
+import os
 from spacy.cli import download
 
-# Download model if it's not available
-try:
-    nlp = spacy.load("en_core_web_lg")
-except OSError:
+# Check if the model is downloaded, and if not, download it.
+model_dir = "resume app/en_core_web_lg"
+if not os.path.exists(model_dir):
     download("en_core_web_lg")
-    nlp = spacy.load("en_core_web_lg")
+
+# Now load the model from the custom directory.
+try:
+    nlp = spacy.load(model_dir)
+except OSError:
+    print("Model loading failed!")
+
 
 # Load models
 tfidf = joblib.load("models/tfidf_vectorizer.joblib")
