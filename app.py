@@ -10,7 +10,7 @@ import spacy
 import os
 
 # Check if the model is already installed
-model_path = "resume app/en_core_web_md"
+model_path = "en_core_web_md"
 # Check if the model exists at the given location
 if not os.path.exists(model_path):
     raise FileNotFoundError(
