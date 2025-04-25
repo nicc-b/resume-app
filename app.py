@@ -5,21 +5,20 @@ import fitz  # PyMuPDF
 import pandas as pd
 import bm25s
 from bm25s import BM25
-import spacy
 
-import subprocess
-import sys
+import spacy
 import os
 
 # Check if the model is already installed
 model_path = "resume app/en_core_web_lg"
+# Check if the model exists at the given location
 if not os.path.exists(model_path):
-    # Install the model using subprocess
-    subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_lg"])
+    raise FileNotFoundError(
+        f"Model not found at {model_path}. Please check the upload."
+    )
 
-# Now, load the model
+# Load the NLP model
 nlp = spacy.load(model_path)
-
 
 # Load models
 tfidf = joblib.load("models/tfidf_vectorizer.joblib")
