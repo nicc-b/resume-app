@@ -3,12 +3,19 @@ import streamlit as st
 import joblib
 import fitz  # PyMuPDF
 import pandas as pd
-import spacy
 import bm25s
 from bm25s import BM25
 
-# Load NLP pipeline
-nlp = spacy.load("en_core_web_lg")
+import spacy
+from spacy.cli import download
+
+# Check if the model is installed, otherwise download and install it
+try:
+    nlp = spacy.load("en_core_web_lg")
+except OSError:
+    # If model not found, download it
+    download("en_core_web_lg")
+    nlp = spacy.load("en_core_web_lg")
 
 # Load models
 tfidf = joblib.load("models/tfidf_vectorizer.joblib")
