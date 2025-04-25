@@ -19,7 +19,7 @@ try:
     nlp = spacy.load("en_core_web_lg")
 except OSError:
     # If model not found, download it
-    download("en_core_web_lg")
+    spacy.cli.download("en_core_web_lg")
     nlp = spacy.load("en_core_web_lg")
 
 # Load models
