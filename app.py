@@ -7,19 +7,18 @@ import bm25s
 from bm25s import BM25
 import spacy
 
+import subprocess
+import sys
 import os
-from spacy.cli import download
 
-# Check if the model is downloaded, and if not, download it.
-model_dir = "resume app/en_core_web_lg"
-if not os.path.exists(model_dir):
-    download("en_core_web_lg")
+# Check if the model is already installed
+model_path = "resume app/en_core_web_lg"
+if not os.path.exists(model_path):
+    # Install the model using subprocess
+    subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_lg"])
 
-# Now load the model from the custom directory.
-try:
-    nlp = spacy.load(model_dir)
-except OSError:
-    print("Model loading failed!")
+# Now, load the model
+nlp = spacy.load(model_path)
 
 
 # Load models
