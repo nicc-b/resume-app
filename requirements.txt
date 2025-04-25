@@ -1,6 +1,7 @@
 streamlit
 scikit-learn
 pandas
+numpy
 joblib
 PyMuPDF
 spacy
