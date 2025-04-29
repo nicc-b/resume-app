@@ -9,5 +9,5 @@ spacy
 python-docx
 textract
 pytesseract
-PIL
+Pillow
 pdf2image
