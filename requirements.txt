@@ -6,7 +6,7 @@ joblib
 PyMuPDF
 bm25s
 spacy
-docx
+python-docx
 textract
 pytesseract
 PIL
