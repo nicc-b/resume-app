@@ -6,3 +6,8 @@ joblib
 PyMuPDF
 bm25s
 spacy
+docx
+textract
+pytesseract
+PIL
+pdf2image
