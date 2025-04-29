@@ -174,3 +174,6 @@ wrapt @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_30cv
 xlrd @ file:///croot/xlrd_1685030938141/work
 XlsxWriter @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/xlsxwriter_1699250873123/work
 zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1732827521216/work
+pip==25.1
+altair==4.2.0
+
